@@ -1,24 +1,52 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Mini Project: Space Battles</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/styles.css">
-        <script src="js/script.js" async defer></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
+<html lang="en">
 
-        
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div class="bodyContainer">
+
+        <div class="mainCharacterView left">
+            <div class="nameBox">USS Schwarzenegger</div>
+            <div class="playerImage"></div>
+            <div class="playerStats">
+
+                <h3 id="playerHull">Hull : 20</h3>
+                <h3 id="playerFirePower">FirePower : 5</h3>
+                <h3 id="playerAccuracy">Accuracy : .7</h3>
+            </div>
+
+        </div>
+
+
+        <div class="mainCharacterView right">
+
+            <div class="nameBox">Enemy</div>
+            <div class="enemyImage"></div>
+            <div class="enemyStats">
+                <h3 id="enemyHull">Hull : 6</h3>
+                <h3 id="enemyFirePower">FirePower : 3</h3>
+                <h3 id="enemyAccuracy">Accuracy : .6</h3>
+
+
+            </div>
+
+        </div>
+
+        <script src="script.js" defer></script>
+        <script src="app.js" defer></script>
+
+</body>
+
 </html>
