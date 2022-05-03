@@ -18,14 +18,18 @@ const game = {
 
     //attack method
     attack: function (attacker, attacked) {
-        console.log(`${attacker.name} is attacking ${attacked.name}!`);
-        alert(`${attacker.name} is attacking ${attacked.name}!`)
+        // console.log(`${attacker.name} is attacking ${attacked.name}!`);
+        console.log(`%c${attacker.name} is attacking ${attacked.name}!`, `color: green`);
+        alert(`${attacker.name} is attacking ${attacked.name}`);
         //check if attack higher than attacked ship's directory
         if (Math.random() < attacked.accuracy) {
             //tell us the attacked ship has been hit
-            console.log(`${attacked.name} has been hit!`);
+            // console.log(`${attacked.name} has been hit!`);
+            console.log(`%c${attacker.name} HITS the ${attacked.name}!!!`, `color: red`);
             //remove hull points of attacked ship 
             attacked.hull = attacked.hull - attacker.firepower;
+            // tell us the attack fire power
+            console.log(`%cYou have done ${attacker.firepower} damage on the ${attacked.name}`, `border: 1px solid grey`);
             //if hull reaches 0, keep it at 0 (no negative hull points)
             if (attacked.hull < 0) { attacked.hull = 0 };
             //tell us remaining hull score of attacked ship
@@ -105,14 +109,14 @@ const game = {
         }
     },
 
-    //reset function
+    // reset function
     reset: function () {
         game.playing = true;
         game.ussSchwarzenegger.hull = 20;
         game.alienShips = [];
     },
 
-    //show alien ships function
+    // show alien ships function
     displayAliens: function () {
         let description = '';
         for (i = 0; i < this.alienShips.length; i++) {
@@ -122,7 +126,7 @@ const game = {
         return prompt('Which alien ship would you like to attack? \nPlease enter one of the remaining numbers of the ship from [ ] and hit [enter]\n' + description);
     },
 
-    //pick which ship to attack
+    // pick which ship to attack
     pickShip: function () {
         //ask user which alien ship to attack
         let AlienToAttack = parseInt(this.displayAliens()) - 1; // Creating new Variable for alien to attack
@@ -130,7 +134,7 @@ const game = {
         this.attack(this.ussSchwarzenegger, this.alienShips[AlienToAttack]);
     },
 
-    //remove destroyed ship from array
+    // remove destroyed ship from array
     removeDestroyed: function (enemy) {
         for (i = 0; i < this.alienShips.length; i++) {
             if (enemy === this.alienShips[i]) {
@@ -143,13 +147,13 @@ const game = {
 
     //play function
     play: function () {
-        //welcome player
+        // welcome message
         alert('Welcome to SPACE BATTLES');
-        //let player decide to play
+        // playing decision
         if (confirm("Earth has been attacked by a horde of aliens! \nYou are the captain of the USS Schwarzenegger, \non a mission to destroy every last alien ship to save Earth. \nDo you wish to fight? \nClick [OK] to continue or [Cancel] to exit.")) {
             alert('Man your battle station!');
 
-            //get our array of enemies
+            //get array of enemies
             this.generateEnemies();
             //check the conditional loop
             while (this.playing === true) {
@@ -178,6 +182,4 @@ const game = {
 }
 
 console.log(game.play());
-
-
 
